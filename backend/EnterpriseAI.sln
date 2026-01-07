@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{324CEAAA-472B-4831-884E-C8ADA7FA0390}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseAI.API", "src\EnterpriseAI.API\EnterpriseAI.API.csproj", "{DAD1CC52-CBE6-4F58-88FD-1A0717C46330}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseAI.Core", "src\EnterpriseAI.Core\EnterpriseAI.Core.csproj", "{00CF8451-6B12-453A-9397-12DA3EB2B6DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseAI.Infrastructure", "src\EnterpriseAI.Infrastructure\EnterpriseAI.Infrastructure.csproj", "{EA01642F-8B56-4253-88FB-67D537FA8613}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAD1CC52-CBE6-4F58-88FD-1A0717C46330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAD1CC52-CBE6-4F58-88FD-1A0717C46330}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAD1CC52-CBE6-4F58-88FD-1A0717C46330}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAD1CC52-CBE6-4F58-88FD-1A0717C46330}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00CF8451-6B12-453A-9397-12DA3EB2B6DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00CF8451-6B12-453A-9397-12DA3EB2B6DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00CF8451-6B12-453A-9397-12DA3EB2B6DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00CF8451-6B12-453A-9397-12DA3EB2B6DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA01642F-8B56-4253-88FB-67D537FA8613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA01642F-8B56-4253-88FB-67D537FA8613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA01642F-8B56-4253-88FB-67D537FA8613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA01642F-8B56-4253-88FB-67D537FA8613}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DAD1CC52-CBE6-4F58-88FD-1A0717C46330} = {324CEAAA-472B-4831-884E-C8ADA7FA0390}
+		{00CF8451-6B12-453A-9397-12DA3EB2B6DC} = {324CEAAA-472B-4831-884E-C8ADA7FA0390}
+		{EA01642F-8B56-4253-88FB-67D537FA8613} = {324CEAAA-472B-4831-884E-C8ADA7FA0390}
+	EndGlobalSection
+EndGlobal
