@@ -1,5 +1,5 @@
 # Build stage
-FROM node:20-alpine AS build
+FROM public.ecr.aws/docker/library/node:20-alpine AS build
 WORKDIR /app
 
 # Copy package files
@@ -15,7 +15,7 @@ COPY . .
 RUN npm run build
 
 # Production stage
-FROM nginx:alpine
+FROM public.ecr.aws/docker/library/nginx:alpine
 WORKDIR /usr/share/nginx/html
 
 # Remove default nginx static assets

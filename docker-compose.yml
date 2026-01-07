@@ -13,7 +13,7 @@ services:
       - OLLAMA_HOST=0.0.0.0:11434
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:11434/api/version"]
+      test: ["CMD-SHELL", "ollama list"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -31,7 +31,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://+:5000
       - Ollama__BaseUrl=http://ollama:11434
-      - Ollama__DefaultChatModel=llama3:latest
+      - Ollama__DefaultChatModel=phi3:latest
       - Ollama__DefaultEmbeddingModel=nomic-embed-text
       - DocumentProcessing__MaxFileSizeMB=10
       - DocumentProcessing__ChunkSize=512
@@ -43,7 +43,7 @@ services:
         condition: service_healthy
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/Health"]
       interval: 30s
       timeout: 10s
       retries: 3
