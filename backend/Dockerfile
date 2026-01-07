@@ -2,25 +2,19 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /source
 
-# Copy solution and project files
-COPY EnterpriseAI.sln ./
-COPY src/EnterpriseAI.API/EnterpriseAI.API.csproj src/EnterpriseAI.API/
-COPY src/EnterpriseAI.Core/EnterpriseAI.Core.csproj src/EnterpriseAI.Core/
-COPY src/EnterpriseAI.Infrastructure/EnterpriseAI.Infrastructure.csproj src/EnterpriseAI.Infrastructure/
+# Copy all files
+COPY . .
 
-# Restore dependencies
-RUN dotnet restore
-
-# Copy source code
-COPY src/ src/
-
-# Build and publish
-WORKDIR /source/src/EnterpriseAI.API
-RUN dotnet publish -c Release -o /app/publish
+# Restore, build, and publish in a single step
+RUN dotnet publish "src/EnterpriseAI.API/EnterpriseAI.API.csproj" -c Release -o /app/publish
 
 # Runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
+
+# Install curl for health checks
+RUN apt-get update && apt-get install -y curl
+
 COPY --from=build /app/publish .
 
 # Expose port
